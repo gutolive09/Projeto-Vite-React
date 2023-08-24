@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+ import Cabecalho from "./components/Cabecalho"
+ import Rodape from "./components/Rodape"
+ import Conteudo from "./components/Conteudo"
+import ViteLogo from "./assets/vite.svg"
 
-function App() {
-  const [count, setCount] = useState(0)
+ export default function App(){
+
+  let altViteLogo = "Logo do Vite"
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+   <>
+    {/*Vamos criar um cabeçalho com um header, um h1 com um titulo indicativo sobre o projeto e uma lista ul com 3 links*/}
+    <Cabecalho/>
+    {/* Vamos criar uma seção de conteúdo com uma div e 3 parágrafos com cada um tendo 3 linhas de lorem ipsum. Abaixo destes parágrafos vamos adicionar uma imagem*/}
+    <Conteudo viteLogoProps={ViteLogo} altViteLogoProps={altViteLogo}/>
+    {/* Vamos criar uma seção de rodapé com uma div e uma lista ul com 3 itens com links para redes sociais. Uma parargafo com o seguinte texto: Todos os meus direitos reservados - 2023, adicione o codigo do simbolo de copyright */}
+    <Rodape/>
+   </>
+  )
+
+ }
