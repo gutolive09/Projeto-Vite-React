@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Cabecalho() {
   return (
@@ -7,13 +8,19 @@ export default function Cabecalho() {
         <h1>Vite + React / Coded by - RM550548</h1>
         <ul>
           <li>
-            <a href="">Item - 1</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="">Item - 2</a>
+            <Link to="/produtos">Produtos</Link>
           </li>
           <li>
-            <a href="">Item - 3</a>
+            <Link to="/editar/produtos/1">Editar Produto - 1</Link>
+          </li>
+          <li>
+            <Link to="/editar/produtos/2">Editar Produto - 2</Link>
+          </li>
+          <li>
+            <Link to="/editar/produtos/3">Editar Produto - 3</Link>
           </li>
         </ul>
       </header>
