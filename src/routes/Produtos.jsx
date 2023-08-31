@@ -1,26 +1,35 @@
-import React from 'react'
+import React from "react";
+
+import { ListaProdutos } from "../components/ListaProdutos";
 
 export default function Produtos() {
   return (
     <>
-        <h1>Produtos Informáticos - FIAPO</h1>
+      <h1>Produtos Informáticos - FIAPO</h1>
 
-        <table>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>NOME</th>
+          <th>DESCRIÇÃO</th>
+          <th>PREÇO</th>
+        </tr>
+        <tbody>
+          {ListaProdutos.map((produto, indice) => {
+            <tr key={indice}>
+              <td>{produto.id}</td>
+              <td>{produto.nome}</td>
+              <td>{produto.desc}</td>
+              <td>{produto.preco}</td>
+            </tr>;
+          })}
+        </tbody>
+        <tfoot>
           <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th>DESCRIÇÃO</th>
-            <th>PREÇO</th>
+            <td colSpan={3}>PRODUTOS</td>
           </tr>
-          <tbody>
-
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colSpan={3}>PRODUTOS</td>
-            </tr>
-          </tfoot>
-        </table>
+        </tfoot>
+      </table>
     </>
-  )
+  );
 }
