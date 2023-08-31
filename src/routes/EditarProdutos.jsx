@@ -8,8 +8,6 @@ export default function EditarProdutos() {
 
   const produtoRecuperado = ListaProdutos.filter((produto) => produto.id == id)[0]
 
-  console.log(produtoRecuperado)
-
   return (
     <>
         <h1>EditarProdutos</h1>
