@@ -1,9 +1,8 @@
 import React from "react";
-import reactLogo from "../assets/react.svg"
+import reactLogo from "../assets/react.svg";
 
 export default function Conteudo(props) {
-
-    let altReactLogo = "Logo do React"
+  let altReactLogo = "Logo do React";
   return (
     <section>
       <div>
