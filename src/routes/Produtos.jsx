@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
 import { AiFillEdit as EditObj } from "react-icons/ai";
 import { RiDeleteBin2Fill as DelObj } from "react-icons/ri";
+import estilos from "./Produto.module.css"
 
 export default function Produtos() {
   return (
     <>
       <h1>Produtos Informáticos - FIAPO</h1>
 
-      <table>
+      <table className={estilos.tblEstilo}>
         <tr>
           <th>ID</th>
           <th>NOME</th>
