@@ -1,0 +1,25 @@
+.tit{
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & figure {
+        border: 3px solid #ed145b;
+
+        & img {
+            margin: 0;
+            border: 0 solid;
+            vertical-align: middle;
+        }
+
+        & figcaption {
+            margin: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+    }
+}
