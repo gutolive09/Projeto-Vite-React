@@ -12,6 +12,20 @@
 
     & td{
         border: 2px solid #cf5555;
+
+        &:first-child{
+            text-align: center;
+        }
+
+        &:last-child{
+            text-align: center;
+        }
+
+        & img {
+            display: block;
+            width: 30%;
+            margin: 0 auto;
+        }
     }
 
     & tr{
