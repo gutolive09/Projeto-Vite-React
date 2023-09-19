@@ -45,6 +45,7 @@ export default function Produtos() {
           </tr>
         </tfoot>
       </table>
+      <Link to={"/criar/produtos"}>Adicionar produto</Link>
     </>
   );
 }
