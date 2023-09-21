@@ -5,6 +5,10 @@ import { RiDeleteBin2Fill as DelObj } from "react-icons/ri";
 import estilos from "./Produto.module.css"
 
 export default function Produtos() {
+  document.title = "Lista de produtos"
+  
+  
+
   return (
     <>
       <h1>Produtos Informáticos - FIAPO</h1>
