@@ -1,42 +1,54 @@
 import { Link } from "react-router-dom";
-import { ListaProdutos } from "../components/ListaProdutos";
 import { AiFillEdit as EditObj } from "react-icons/ai";
 import { RiDeleteBin2Fill as DelObj } from "react-icons/ri";
 import estilos from "./Produto.module.css";
 import { useEffect, useState } from "react";
+import ModalInserir from "../components/ModalInserir/ModalInserir";
 
 export default function Produtos() {
   document.title = "Lista de produtos";
 
   const [listaProdutosLocal, setListaProdutosLocal] = useState([{}]);
 
-  useEffect(  () => {
-     fetch("http://localhost:5000/produtos", {
+  useEffect(() => {
+    fetch("http://localhost:5000/produtos", {
       method: "GET",
       header: {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => response.json())
+      .then((response) => {
+        console.log(response.status);
+        return response.json();
+      })
       .then((data) => {
         setListaProdutosLocal(data);
       })
       .catch((err) => console.log(err));
   }, []);
 
+  const[open, setOpen] = useState(false)
+
   return (
     <>
       <h1>Produtos Informáticos - FIAPO</h1>
 
+      {open ?  <ModalInserir open={true} setOpen={setOpen}/> : ""}
+
+      <button onClick={()=> setOpen(true)}>OPEN-MODAL</button>
+
       <table className={estilos.tblEstilo}>
-        <tr>
-          <th>ID</th>
-          <th>NOME</th>
-          <th>DESCRIÇÃO</th>
-          <th>PREÇO</th>
-          <th>IMAGEM</th>
-          <th>EDITAR/EXCLUIR</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>DESCRIÇÃO</th>
+            <th>PREÇO</th>
+            <th>IMAGEM</th>
+            <th>EDITAR/EXCLUIR</th>
+          </tr>
+        </thead>
+
         <tbody>
           {listaProdutosLocal.map((produto, indice) => (
             <tr key={indice}>
