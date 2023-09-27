@@ -1,6 +1,30 @@
 import styles from "./ModalInserir.module.css";
 
 export default function ModalInserir(props) {
+
+    document.title = "CADASTRO"
+
+    let novoId;
+
+    fetch("http://localhost:5000/produtos",{
+
+    method:"GET",
+    headers:{
+        "Content-Type":"application/json"
+    }
+    })
+    .then((response)=> response.json())
+    .then((data)=> {
+        console.log(data.lenght)
+        console.log("NOVO ID" + novoId)
+        novoId = data[data.lenght-1].id + 1
+        return novoId
+    })
+    .catch(error=> console.log(error))
+
+
+    
+
   if (props.open) {
     return (
       <>
