@@ -35,7 +35,7 @@ export default function Produtos() {
 
       {open ?  <ModalInserir open={true} setOpen={setOpen}/> : ""}
 
-      <button onClick={()=> setOpen(true)}>OPEN-MODAL</button>
+      <Link onClick={()=> setOpen(true)}>OPEN-MODAL</Link>
 
       <table className={estilos.tblEstilo}>
         <thead>
