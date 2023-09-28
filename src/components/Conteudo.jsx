@@ -1,8 +1,8 @@
 import React from "react";
-import reactLogo from "../assets/react.svg";
+// import reactLogo from "../assets/react.svg";
 
 export default function Conteudo(props) {
-  let altReactLogo = "Logo do React";
+  // let altReactLogo = "Logo do React";
   return (
     <section>
       <div>
@@ -24,8 +24,8 @@ export default function Conteudo(props) {
           Vero distinctio, nihil saepe quae nam impedit similique ducimus,
           praesentium amet provident, sed modi.
         </p>
-        <img src={reactLogo} alt={altReactLogo} />
-        <img src={props.viteLogoProps} alt={props.altViteLogoProps} />
+        {/* <img src={reactLogo} alt={altReactLogo} />
+        <img src={props.viteLogoProps} alt={props.altViteLogoProps} /> */}
       </div>
     </section>
   );
