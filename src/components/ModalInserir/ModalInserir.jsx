@@ -26,27 +26,28 @@ export default function ModalInserir(props) {
       <>
         <div className={styles.container}>
           <h1>CADASTRO DE PRODUTOS</h1>
-          <button onClick={() => props.setOpen(false)}>CLOSE-MODAL</button>
-
-          <div>
+          
+          <div className="formGroup">
             <form>
               <fieldset>
+              <span className="btnClose" onClick={() => props.setOpen(false)}>X</span>
+
                 <legend>Novo Produto</legend>
                 <div>
                   <label htmlFor="idNome">Nome</label>
-                  <input type="text" name="nome" id="idNome" />
+                  <input type="text" name="nome" id="idNome" placeholder="Digite o nome do produto"/>
                 </div>
                 <div>
                   <label htmlFor="idDesc">Descrição</label>
-                  <input type="text" name="desc" id="idDesc" />
+                  <input type="text" name="desc" id="idDesc" placeholder="Digite a descrição do produto"/>
                 </div>
                 <div>
                   <label htmlFor="idPreco">Preço</label>
-                  <input type="text" name="preco" id="idpreco" />
+                  <input type="text" name="preco" id="idpreco" placeholder="Digite o preço do produto"/>
                 </div>
                 <div>
                   <label htmlFor="idImg"> Imagem</label>
-                  <input type="text" name="img" id="idImg" />
+                  <input type="text" name="img" id="idImg" placeholder="Digitea URL da imagem do produto"/>
                 </div>
                 <div>
                   <button>CADASTRAR</button>
