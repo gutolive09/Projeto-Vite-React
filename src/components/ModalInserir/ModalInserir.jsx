@@ -1,7 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ModalInserir.module.css";
 import "./ModalInserir.scss";
-import { useState } from "react";
 
 export default function ModalInserir(props) {
   document.title = "CADASTRO";
@@ -17,8 +16,8 @@ export default function ModalInserir(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.lenght);
-        console.log("NOVO ID" + novoId);
+        // console.log(data.lenght);
+        // console.log("NOVO ID" + novoId);
         novoId = data[data.lenght - 1].id + 1;
         return novoId;
       })

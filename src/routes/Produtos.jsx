@@ -4,6 +4,7 @@ import { RiDeleteBin2Fill as DelObj } from "react-icons/ri";
 import estilos from "./Produto.module.css";
 import { useEffect, useState } from "react";
 import ModalInserir from "../components/ModalInserir/ModalInserir";
+import ModalEditar from "../components/ModalEditar/ModalEditar";
 
 export default function Produtos() {
   document.title = "Lista de produtos";
@@ -28,6 +29,8 @@ export default function Produtos() {
   }, []);
 
   const[open, setOpen] = useState(false)
+  const[openEditar, setOpenEditar] = useState(false)
+  const[produtoEditado, setProdutoEditado] = useState('')
 
   return (
     <>
@@ -35,7 +38,9 @@ export default function Produtos() {
 
       {open ?  <ModalInserir open={true} setOpen={setOpen}/> : ""}
 
-      <Link onClick={()=> setOpen(true)}>OPEN-MODAL</Link>
+      {openEditar ?  <ModalEditar id={produtoEditado} openEditar={true} setOpen={setOpenEditar}/> : ""}
+
+      <Link className="openModal" onClick={()=> setOpen(true)}>OPEN-MODAL</Link>
 
       <table className={estilos.tblEstilo}>
         <thead>
@@ -50,8 +55,8 @@ export default function Produtos() {
         </thead>
 
         <tbody>
-          {listaProdutosLocal.map((produto, indice) => (
-            <tr key={indice}>
+          {listaProdutosLocal.map((produto) => (
+            <tr key={produto.id}>
               <td>{produto.id}</td>
               <td>{produto.nome}</td>
               <td>{produto.desc}</td>
@@ -61,7 +66,9 @@ export default function Produtos() {
               </td>
               <td>
                 {" "}
-                <Link to={`/editar/produtos/${produto.id}`}>
+                <Link onClick={()=>{
+                  setOpenEditar(true)
+                  setProdutoEditado(produto.id)}}>
                   <EditObj />
                 </Link>{" "}
                 |{" "}
