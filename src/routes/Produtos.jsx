@@ -40,7 +40,7 @@ export default function Produtos() {
 
       {openEditar ?  <ModalEditar id={produtoEditado} openEditar={true} setOpen={setOpenEditar}/> : ""}
 
-      <Link className="openModal" onClick={()=> setOpen(true)}>OPEN-MODAL</Link>
+      <Link className="openModalLink" onClick={() => setOpen(true)}>OPEN-MODAL</Link>
 
       <table className={estilos.tblEstilo}>
         <thead>

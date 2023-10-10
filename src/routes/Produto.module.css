@@ -1,27 +1,22 @@
-.openModal{
-    font-weight: bold;
-        border: 0 solid transparent;
-        margin: 0 auto;
-        height: 50px;
-        width: 40%;
-        background-color: green;
-        font-size: 1.5rem;
-        transition: background-color 300ms, color 300ms;
-}
+
 
 .tblEstilo{
     border-collapse: collapse;
-    border: 2px solid #ccc;
+    border: 2px solid black;
     margin: 0 auto;
+    text-align: center;
 
 
     &  th{
-        background-color: #ffe4c4;
-        border: 2px solid #ccc;
+        background-color: rgb(108, 187, 108);
+        border: 1px solid black;
+        padding: 17px;
     }
 
     & td{
-        border: 2px solid #cf5555;
+        border: 1px solid black;
+        padding: 17px;
+
 
         &:first-child{
             text-align: center;
@@ -43,5 +38,17 @@
         &:hover{
             background-color: #b0acac;
         }
+    }
+}
+
+.openModalLink{
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover{
+        color: #b0acac;
+        text-decoration: none;
     }
 }

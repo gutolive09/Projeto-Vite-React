@@ -33,6 +33,7 @@ export default function ModalEditar(props) {
     headers: {
       "Content-type": "aplication/json",
     },
+    body: JSON.stringify(produtoRecuperado)
   })
     .then((response) => response.json())
     .then((response) => {
