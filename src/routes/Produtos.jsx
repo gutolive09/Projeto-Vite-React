@@ -5,6 +5,7 @@ import estilos from "./Produto.module.css";
 import { useEffect, useState } from "react";
 import ModalInserir from "../components/ModalInserir/ModalInserir";
 import ModalEditar from "../components/ModalEditar/ModalEditar";
+import ModalExcluir from "../components/ModalExcluir/ModalExcluir";
 
 export default function Produtos() {
   document.title = "Lista de produtos";
@@ -29,8 +30,12 @@ export default function Produtos() {
   }, []);
 
   const[open, setOpen] = useState(false)
+
   const[openEditar, setOpenEditar] = useState(false)
   const[produtoEditado, setProdutoEditado] = useState('')
+
+  const[openExcluir, setOpenExcluir] = useState(false)
+  const[produtoExcluido, setProdutoExcluido] = useState('')
 
   return (
     <>
@@ -39,6 +44,8 @@ export default function Produtos() {
       {open ?  <ModalInserir open={true} setOpen={setOpen}/> : ""}
 
       {openEditar ?  <ModalEditar id={produtoEditado} openEditar={true} setOpen={setOpenEditar}/> : ""}
+
+      {openExcluir ?  <ModalExcluir id={produtoExcluido} openExcluir={true} setOpen={setOpenExcluir}/> : ""}
 
       <Link className="openModalLink" onClick={() => setOpen(true)}>OPEN-MODAL</Link>
 
@@ -72,7 +79,9 @@ export default function Produtos() {
                   <EditObj />
                 </Link>{" "}
                 |{" "}
-                <Link to={`/excluir/produtos/${produto.id}`}>
+                <Link onClick={()=>{
+                  setOpenExcluir(true)
+                  setProdutoExcluido(produto.id)}}>
                   <DelObj />
                 </Link>
               </td>

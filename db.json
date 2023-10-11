@@ -4,7 +4,7 @@
       "id": 1,
       "nome": "Teclado",
       "desc": "Mecânico",
-      "preco": "150",
+      "preco": 150,
       "img": "https://picsum.photos/200/300"
     },
     {
@@ -16,9 +16,9 @@
     },
     {
       "id": 3,
-      "nome": "Headset",
-      "desc": "8D",
-      "preco": 550,
+      "nome": "Gabinete",
+      "desc": "Branco",
+      "preco": 200,
       "img": "https://picsum.photos/200/300"
     },
     {
@@ -34,6 +34,13 @@
       "desc": "Cadeira Gamer DxRacer",
       "preco": 2800,
       "img": "https://picsum.photos/200/300"
+    },
+    {
+      "nome": "Microfone",
+      "desc": "Condensador",
+      "preco": "150",
+      "img": "https://picsum.photos/200/300",
+      "id": 6
     }
   ]
 }

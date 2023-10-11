@@ -1,0 +1,40 @@
+.container{
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    color: #fff;
+
+    padding: 20% 10%;
+
+    & h1, p{
+        text-align: center;
+    }
+
+    & .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+    }
+    & .btn{
+        color: rgb(0, 0, 0);
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        border-radius: 7px;
+        border: 2px transparent;
+        width: 25%;
+        height: 35px;
+
+        &:first-child{
+            background-color: rgb(108, 187, 108);
+        }
+        &:last-child{
+            background-color: red;
+        }
+    }
+
+}

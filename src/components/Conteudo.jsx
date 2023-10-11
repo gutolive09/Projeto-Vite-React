@@ -1,7 +1,6 @@
-import React from "react";
 // import reactLogo from "../assets/react.svg";
 
-export default function Conteudo(props) {
+export default function Conteudo() {
   // let altReactLogo = "Logo do React";
   return (
     <section>
