@@ -3,9 +3,7 @@ import styles from "../ModalInserir/ModalInserir.module.css";
 import "../ModalInserir/ModalInserir.scss";
 
 export default function ModalEditar(props) {
-
   const [produtoRecuperado, setProdutoRecuperado] = useState({});
-
 
   useEffect(() => {
     fetch(`http://localhost:5000/produtos/${props.id}`, {
@@ -16,34 +14,30 @@ export default function ModalEditar(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
-        setProdutoRecuperado(data)
+        setProdutoRecuperado(data);
       });
-  });
+  }, [props.id]);
 
   const handleChange = (e) => {
-    const {name, value} = e.target
-    setProdutoRecuperado({...produtoRecuperado, [name]:value})
-  }
+    const { name, value } = e.target;
+    setProdutoRecuperado({ ...produtoRecuperado, [name]: value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefalut()
-    fetch(`http://localhost:5000/produtos/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-type": "aplication/json",
-    },
-    body: JSON.stringify(produtoRecuperado)
-  })
-    .then((response) => response.json())
-    .then((response) => {
-      console.log(response);
-      setOpen(false);
+    e.preventDefault();
+    fetch(`http://localhost:5000/produtos/${props.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(produtoRecuperado),
     })
-    .catch(error=>console.log(error))
-    
-    props.setOpen(false)
-    window.location = "/produtos"
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        props.setOpen(false);
+      })
+      .catch((error) => console.log(error));
   };
 
   if (props.openEditar) {

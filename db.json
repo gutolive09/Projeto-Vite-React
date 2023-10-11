@@ -4,7 +4,7 @@
       "id": 1,
       "nome": "Teclado",
       "desc": "Mecânico",
-      "preco": 150,
+      "preco": "150",
       "img": "https://picsum.photos/200/300"
     },
     {
